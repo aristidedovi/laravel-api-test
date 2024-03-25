@@ -35,6 +35,7 @@ jobs:
           cp .env.testing .env
           php artisan key:generate
           php artisan migrate
+          php artisan db:seed
 
       - name: Run tests
         run: php artisan test --testsuite=Feature

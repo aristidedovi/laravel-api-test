@@ -23,8 +23,8 @@ class ExampleTest extends TestCase
     public function test_api_get_user_token(): void 
     {
         $data = [
-            "email"=> "",
-            "password" => ""
+            "email"=> 'test@example.com',
+            "password" => '1234',
         ];
 
         // Utilisation de la méthode post() pour envoyer des données POST à l'URL spécifiée
