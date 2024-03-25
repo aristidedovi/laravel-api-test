@@ -111,8 +111,13 @@ class UserController extends Controller
                 'email' => ['The provided credentials are incorrect.'],
             ]);
         }
+
+        $token = $user->createToken($request->email)->plainTextToken;
         
         // On retourne le token en JSON
-        return response()->json($user->createToken($request->email)->plainTextToken);
+        return response()->json([
+            "success" => true,
+            'token' => $token
+        ]);
     }
 }
