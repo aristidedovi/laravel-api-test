@@ -22,9 +22,16 @@ class ExampleTest extends TestCase
      */
     public function test_api_get_user_token(): void 
     {
+        // Créer un utilisateur pour le test
+        $user = User::factory()->create([
+            'name' => 'John Doe',
+            'email' => 'john@example.com',
+            'password' => \bcrypt('1234'),
+        ]);
+
         $data = [
-            "email"=> 'test@example.com',
-            "password" => '1234',
+            'email'=> 'john@example.com',
+            'password' => '1234',
         ];
 
         // Utilisation de la méthode post() pour envoyer des données POST à l'URL spécifiée
