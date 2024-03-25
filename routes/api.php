@@ -21,7 +21,8 @@ use App\Http\Controllers\API\UserController;
 // });
 
 
-Route::apiResource("users", UserController::class)->middleware('auth:sanctum'); // Les routes "users.*" de l'API
+//Route::apiResource("users", UserController::class)->middleware('auth:sanctum'); // Les routes "users.*" de l'API
+Route::apiResource("users", UserController::class); // Les routes "users.*" de l'API
 
 
 Route::post('/tokens/create', [UserController::class, 'createToken']);
