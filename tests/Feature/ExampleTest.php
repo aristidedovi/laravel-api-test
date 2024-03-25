@@ -38,7 +38,7 @@ class ExampleTest extends TestCase
         ];
 
         // Utilisation de la méthode post() pour envoyer des données POST à l'URL spécifiée
-        $response = $this->post('/tokens/create', $data);
+        $response = $this->post('/api/tokens/create', $data);
 
         // Vérifiez que la réponse HTTP est 200 (OK) ou autre statut attendu
         $response->assertStatus(200);
